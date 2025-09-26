@@ -726,6 +726,30 @@
         </div>
     </nav>
 
+    <!-- Fix: ensure RTL mobile menu uses vertical column like LTR -->
+    <style>
+        @media (max-width: 768px) {
+            /* Force RTL mobile menu to be vertical (override row-reverse) */
+            [dir="rtl"] .nav-links {
+                flex-direction: column !important;
+                align-items: stretch;
+            }
+
+            /* Make each item full-width and right-aligned in RTL mobile */
+            [dir="rtl"] .nav-links li {
+                width: 100%;
+                text-align: right;
+            }
+
+            [dir="rtl"] .nav-links li a,
+            [dir="rtl"] .nav-links li button.lang-toggle {
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+        }
+    </style>
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/+2001027321774" class="whatsapp-float" target="_blank">📱</a>
 
